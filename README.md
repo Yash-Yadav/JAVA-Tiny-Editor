@@ -1,4 +1,6 @@
 # JAVA-Tiny-Editor
+To debug and Edit the above project Microsoft Visual Studio is needed. Download [Here](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15#
+)
 For More Resource got to: [Source 4 Resource](https://source4resource.blogspot.com)
 ## What is JAVA Tiny Editor?
   JAVA Tiny Editor is an Application made to run on Microsoft Windows OS running Dot Net Framework v4 and above.
