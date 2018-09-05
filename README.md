@@ -1,5 +1,5 @@
 # JAVA-Tiny-Editor
-For More Resource got to: (Source 4 Resource)[https://source4resource.blogspot.com]
+For More Resource got to: [Source 4 Resource](https://source4resource.blogspot.com)
 ## What is JAVA Tiny Editor?
   JAVA Tiny Editor is an Application made to run on Microsoft Windows OS running Dot Net Framework v4 and above.
   This tiny Editor does your work easy, especially when you are working with JAVA language and using only Notepad as a Text editor.
