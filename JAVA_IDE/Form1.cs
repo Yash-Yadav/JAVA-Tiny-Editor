@@ -70,7 +70,7 @@ namespace JAVA_IDE
             }
             else
             {
-                saveState.Text = "Kindly Use Save As button";                
+                MessageBox.Show("Kindly Use \"Save As\" button, to save a new File");
             }
             
         }
@@ -83,25 +83,6 @@ namespace JAVA_IDE
             saveState.Text = " - ";
             CurrentFile.Text = " - ";
             fileNameOnly = null;
-        }
-
-        private void SaveAs_Click(object sender, EventArgs e)
-        {
-            saveState.Text = "";
-            //Saving the File
-            SaveFileDialog SDialog = new SaveFileDialog();
-            SDialog.Filter = "Java file (*.java)|*.java";
-            SDialog.Title = "Save Dialog Box";
-            SDialog.RestoreDirectory = true;
-            if (SDialog.ShowDialog() != DialogResult.OK)
-                saveState.Text = "Nothing Saved";
-            else
-            {
-                using (StreamWriter outputFile = new StreamWriter(SDialog.FileName))
-                {
-                    outputFile.WriteLine(Code.Text);
-                }
-            }
         }
 
         private void Compile_Run_Click(object sender, EventArgs e)
@@ -156,6 +137,32 @@ namespace JAVA_IDE
             }
         }
 
+        private void SaveAs_Click(object sender, EventArgs e)
+        {
+            saveState.Text = "";
+            //Saving the File
+            SaveFileDialog SDialog = new SaveFileDialog();
+            SDialog.Filter = "Java file (*.java)|*.java";
+            SDialog.Title = "Save Dialog Box";
+            SDialog.RestoreDirectory = true;
+            if (SDialog.ShowDialog() != DialogResult.OK)
+                saveState.Text = "Nothing Saved";
+            else
+            {
+                using (StreamWriter outputFile = new StreamWriter(SDialog.FileName))
+                {
+                    outputFile.WriteLine(Code.Text);
+
+                    fileNameOnly = Path.GetFileName(SDialog.FileName);
+                    fileName_path = SDialog.FileName;
+                    Drive = fileName_path.Split('\\')[0].ToString();
+                    RemainingPath = "cd " + Path.GetDirectoryName(fileName_path);
+                    CurrentFile.Text = fileNameOnly;
+
+                }
+            }
+        }
+        
         private void Open_Click(object sender, EventArgs e)
         {
             saveState.Text = " - ";
